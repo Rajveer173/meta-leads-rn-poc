@@ -1,0 +1,22 @@
+{
+  "name": "meta-leads-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Receives Meta Lead Ads webhooks and pushes leads to the app over WebSocket",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "dev": "node --watch --env-file-if-exists=.env src/index.js",
+    "simulate": "node --env-file-if-exists=.env scripts/simulate-webhook.js",
+    "listen": "node --env-file-if-exists=.env scripts/ws-listen.js",
+    "subscribe": "node --env-file-if-exists=.env scripts/subscribe-page.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "ws": "^8.18.0"
+  }
+}
